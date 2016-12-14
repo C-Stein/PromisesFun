@@ -1,0 +1,22 @@
+{
+  "weapons" : [
+    {
+      "name": "candle stick"
+    },
+    {
+      "name": "knife"
+    },
+    {
+      "name": "lead pipe"
+    },
+    {
+      "name": "rope"
+    },
+    {
+      "name": "revolver"
+    },
+    {
+      "name": "wrench"
+    }
+  ]
+}

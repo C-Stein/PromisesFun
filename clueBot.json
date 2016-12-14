@@ -1,0 +1,73 @@
+{
+  "suspects": [
+    {
+      "name": "Mrs. Peacock",
+      "color": "blue"
+    },
+    {
+      "name": "Colonel Mustard",
+      "color": "yellow"
+    },
+    {
+      "name": "Miss Scarlett",
+      "color": "red"
+    },
+    {
+      "name": "Mrs. White",
+      "color": "white"
+
+    }, 
+    {
+      "name": "Professor Plum",
+      "color": "purple"
+    },
+    {
+      "name": "Mr. Green",
+      "color": "green"
+    }
+
+  ],
+  "rooms": [
+    {
+      "name": "kitchen"
+    },
+    {
+      "name": "ballroom"
+    },
+    {
+      "name": "conservatory"
+    },
+    {
+      "name": "dining room"
+    },
+    {
+      "name": "lounge"
+    },
+    {
+      "name": "Library"
+    },
+    {
+      "name": "billiard room"
+    }
+  ],
+  "weapons" : [
+    {
+      "name": "candle stick"
+    },
+    {
+      "name": "knife"
+    },
+    {
+      "name": "lead pipe"
+    },
+    {
+      "name": "rope"
+    },
+    {
+      "name": "revolver"
+    },
+    {
+      "name": "wrench"
+    }
+  ]
+}

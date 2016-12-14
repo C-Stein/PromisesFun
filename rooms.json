@@ -1,0 +1,25 @@
+{
+  "rooms": [
+    {
+      "name": "kitchen"
+    },
+    {
+      "name": "ballroom"
+    },
+    {
+      "name": "conservatory"
+    },
+    {
+      "name": "dining room"
+    },
+    {
+      "name": "lounge"
+    },
+    {
+      "name": "Library"
+    },
+    {
+      "name": "billiard room"
+    }
+  ]
+}

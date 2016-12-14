@@ -1,0 +1,30 @@
+{
+  "suspects": [
+    {
+      "name": "Mrs. Peacock",
+      "color": "blue"
+    },
+    {
+      "name": "Colonel Mustard",
+      "color": "yellow"
+    },
+    {
+      "name": "Miss Scarlett",
+      "color": "red"
+    },
+    {
+      "name": "Mrs. White",
+      "color": "white"
+
+    }, 
+    {
+      "name": "Professor Plum",
+      "color": "purple"
+    },
+    {
+      "name": "Mr. Green",
+      "color": "green"
+    }
+
+  ]
+}

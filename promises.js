@@ -118,20 +118,6 @@ var suspects;
 var weapons;
 var rooms;
 
-// // function doSuspects(){
-// //   return this.responseText
-// // }
-
-// function doWeapons(e){
-//   var data = JSON.parse(e.target.responseText)
-//   weapons = data.weapons
-// }
-
-// function doRooms(e){
-//   var data = JSON.parse(e.target.responseText)
-//   rooms = data.rooms
-// }
-
 function returnRandom(min, max){
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -141,7 +127,8 @@ function returnRandom(min, max){
 var promise1 = new Promise(function(resolve, reject){ 
   var request1 = new XMLHttpRequest()
   request1.addEventListener("load", function() {
-    resolve(request1.responseText)
+    var list = JSON.parse(request1.responseText).suspects
+    resolve(list)
   })
   request1.open("GET", "suspects.json")
   request1.send()
@@ -150,7 +137,8 @@ var promise1 = new Promise(function(resolve, reject){
 var promise2 = new Promise(function(resolve, reject){
   var request2 = new XMLHttpRequest()
   request2.addEventListener("load", function() {
-    resolve(request2.responseText)
+    var list = JSON.parse(request2.responseText).weapons
+    resolve(list)
   })
   request2.open("GET", "weapons.json")
   request2.send()
@@ -159,13 +147,37 @@ var promise2 = new Promise(function(resolve, reject){
 var promise3 = new Promise(function(resolve, reject){
   var request3 = new XMLHttpRequest()
   request3.addEventListener("load", function() {
-    resolve(request3.responseText)
+    var list = JSON.parse(request3.responseText).rooms
+    resolve(list)
   })
   request3.open("GET", "rooms.json")
   request3.send()
 })
 
-//example of chaining promises in ajax file
+///////put the logic in one  function///////
+
+// function getJSON (listToGet) {
+//   return new Promise(function(resolve, reject){
+//     var xhr = new XMLHttpRequest()
+//     xhr.addEventListener("load", function() {
+//       var list = JSON.parse(xhr.responseText)[listToGet];
+//       window[listToGet] = list
+//       //console.log('got ' + listToGet)
+
+//       resolve()
+//     })
+//     console.log(listToGet);
+//     xhr.open("GET", `${listToGet}.json`)
+//     xhr.send()
+//   })
+// }
+// //example of chaining promises in ajax file
+// getJSON("suspects")
+//   .then(() => getJSON("weapons"))
+//   .then(() => getJSON("rooms"))
+//   .then(findGuess) 
+/////////////////////////////////////////////////////
+///Single Promise////////////////////////////////////
 
 // promise1.then(
 //   function(val){
@@ -175,12 +187,14 @@ var promise3 = new Promise(function(resolve, reject){
 //     findGuess()
 //   }
 // )
+/////////////////////////////////////////////////////
+///All the Promises////////////////////////////////////
 
 Promise.all([promise1, promise2, promise3])
   .then(function(values) {
-    suspects = JSON.parse(values[0]).suspects
-    weapons = JSON.parse(values[1]).weapons
-    rooms = JSON.parse(values[2]).rooms
+    suspects = values[0]
+    weapons = values[1]
+    rooms = values[2]
     findGuess()
   })
 
